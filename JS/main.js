@@ -1,9 +1,8 @@
-import NotesAPI from "./NotesAPI.js"
+import NotesView from "./NotesView.js"
 
-NotesAPI.saveNote({
-    id: 514919,
-    title: "The title has changed",
-    body: "This is a second new note."
+const app = document.getElementById("app");
+const view = new NotesView(app, {
+    onNoteAdd() {
+        console.log("Lets add a new note!");
+    }
 });
-
-console.log(NotesAPI.getAllNotes());
